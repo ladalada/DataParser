@@ -28,7 +28,7 @@ def get_links():
         try:
             save_to_file(ui.lineEdit_SaveTo.text(), "Links:\n" + html_links(link))
         except:
-            ui.lineEdit_SaveTo.setText("Fill in this line to save to file")
+            ui.lineEdit_SaveTo.setText("")
     except:
         if len(link) > 0:
             ui.label_Data.setText("Wrong html link")
@@ -48,7 +48,7 @@ def get_data():
                 try:
                     save_to_file(ui.lineEdit_SaveTo.text(), html_text(link))
                 except:
-                    ui.lineEdit_SaveTo.setText("Fill in this line to save to file")
+                    ui.lineEdit_SaveTo.setText("")
             else:
                 ui.lineEdit_Link.setText("Fill in this line!")
         except:
