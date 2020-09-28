@@ -1,0 +1,6 @@
+{
+  "main_test.py::test_document": true,
+  "venv/Lib/site-packages/tika/tests/test_tika.py::CreateTest::test_kill_server": true,
+  "venv/Lib/site-packages/tika/tests/test_tika.py::CreateTest::test_local_binary": true,
+  "venv/Lib/site-packages/tika/tests/test_tika.py::CreateTest::test_local_path": true
+}
