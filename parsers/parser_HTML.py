@@ -41,7 +41,7 @@ def html_text(source_link):
                         if current_content.name == 'script' or current_content.name == None  or current_content.name == 'noscript'\
                                 or current_content.name == 'iframe':
                             continue
-                        result += ' ' + content.text
+                        result += ' ' + current_content.text
                     break
             break
     result = re.sub(r'^\s+|\n|\s+$', '', result)
