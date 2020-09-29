@@ -33,14 +33,16 @@ def html_text(source_link):
     except ValueError:
         return 'no such site'
 
-    result += soup.html.head.title.string
-    result += '\n\n'
-
-    contents = soup.contents[1].contents[3].contents
-    for content in contents:
-        if content.name == 'script' or content.name == None:
-            continue
-        result += content.text
-
+    for content in soup.contents:
+        if content.name == 'html':
+            for second_content in content.contents:
+                if second_content.name == 'body':
+                    for current_content in second_content.contents:
+                        if current_content.name == 'script' or current_content.name == None  or current_content.name == 'noscript'\
+                                or current_content.name == 'iframe':
+                            continue
+                        result += ' ' + content.text
+                    break
+            break
     result = re.sub(r'^\s+|\n|\s+$', '', result)
     return result
