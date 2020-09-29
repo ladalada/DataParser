@@ -8,7 +8,11 @@ def get_soup(link):
     return soup
 
 def html_links(source_link):
-    source_soup = get_soup(source_link)
+    try:
+        source_soup = get_soup(source_link)
+    except ValueError:
+        return 'no such site'
+    
     links = []
     for a in source_soup.find_all('a'):
         href = a.get('href')
@@ -24,7 +28,11 @@ def cleanhtml(raw_html):
 
 def html_text(source_link):
     result = ''
-    soup = get_soup(source_link)
+    try:
+        soup = get_soup(source_link)
+    except ValueError:
+        return 'no such site'
+
     result += soup.html.head.title.string
     result += '\n\n'
 
